@@ -1,9 +1,13 @@
-double x = x + x
+double  x   =  x + x
+-- [1] [2] [3] [ 4 ]
+-- [1] name of function declaration. Must always begin lowercase.
+-- [2] parameters
+-- [3] declaration operator
+-- [4] expression
 
 doubleUs a b = double a + double b
 
-addUp x y = x + y
-
+-- if/thens are essentially just ternary expressions
 biggify x =
     if x < 100
         then (x*2) + 100
@@ -16,10 +20,6 @@ fib x =
         then if x == 1 then 1 else 0
         else fib (x - 1) + fib (x - 2)
 
-symbolNamesCanInclude'Apostrophes = 6
-
-lostNumbers = [36, 10, 59, 97]
-
 -- Note that appending to a list generally requires traversing the whole array
 sarcastify myStr = myStr ++ " ...NOT!!!"
 
@@ -27,3 +27,6 @@ sarcastify myStr = myStr ++ " ...NOT!!!"
 prependSeven someNums = 7 : someNums
 
 secondLetter myStr = head (tail myStr)
+
+-- Haskell functions are always partially applied
+partialApplication a b c = a + b + c
