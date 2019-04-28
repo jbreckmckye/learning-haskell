@@ -15,6 +15,7 @@ biggify x =
 
 ensmallen x = if x < 10 then x else ensmallen (x / 2)
 
+-- recursion
 fib x =
     if x < 2
         then if x == 1 then 1 else 0
@@ -29,4 +30,12 @@ prependSeven someNums = 7 : someNums
 secondLetter myStr = head (tail myStr)
 
 -- Haskell functions are always partially applied
+-- (you can test this with the function below in the REPL)
 partialApplication a b c = a + b + c
+
+-- 'let' in functions allows us define subparts of expressions ahead-of-time
+-- much like vars will do inside a pure function in other languages
+foo x = 
+    let y = x * 2
+        z = x ^ 2
+    in 2 * y * z

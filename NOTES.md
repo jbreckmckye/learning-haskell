@@ -18,6 +18,19 @@ Load packages into the REPL with `:l`, e.g. `:l functions.hs`.
 
 Everything in Haskell is an expression or a declaration. Expressions can be literals or operations. Declarations name expressions. Haskell programs are nothing but large expressions comprising smaller ones.
 
+## Whitespace
+
+...is significant. Make sure parts of expressions are indented underneath the start of each, e.g.
+
+```haskell
+foo x = 
+    let y = x * 2
+        z = x ^ 2
+    in 2 * y * z
+```
+
+## Functions
+
 Functions are simply expressions that are applied to arguments. Haskell functions are essentially partially applied: every argument passed creates a new curried function, e.g.
 
 ```haskell
@@ -27,8 +40,6 @@ s2 = partialApplication 2
 s3 = partialApplication 3
 s3 -- emits '6'
 ```
-
-### Calling
 
 Haskell functions are generally called in the prefix style -
 
@@ -75,6 +86,28 @@ infixl 7 *
 ```
 
 Means that * is an infix operator, with left associativity, applied with level 7 precedence (0-9, higher comes earlier).
+
+### Parens and the $ operator
+
+When operator precedence is in doubt, you can of course always wrap values in parentheses.
+
+```haskell
+(+1) (2 * 3)
+```
+
+You can also use the `$` operator
+
+```haskell
+(+1) $ 2 * 3
+```
+
+How does this work? Well, `$` is defined as
+
+```haskell
+f $ x = f x
+```
+
+Which means anything to the right of `$` gets treated as a single parameter to the left-hand function (essentially enforcing right-hand associativity)
 
 ### Evaluation
 
