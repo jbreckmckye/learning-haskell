@@ -16,7 +16,7 @@ Load packages into the REPL with `:l`, e.g. `:l functions.hs`.
 
 ## Concepts
 
-Everything in Haskell is an expression or a declaration. Expressions can be literals or operations. Declarations name expressions. Haskell programs are nothing but large expressions comprising smaller ones.
+Everything in Haskell can be thought of as an expression or a declaration. Expressions can be literals or operations. Declarations name expressions. Haskell programs are nothing but large expressions comprising smaller ones.
 
 ## Whitespace
 
@@ -36,8 +36,8 @@ Functions are simply expressions that have arguments applied. Haskell functions 
 ```haskell
 partialApplication x y z = x + y + z
 s1 = partialApplication 1
-s2 = partialApplication 2
-s3 = partialApplication 3
+s2 = s1 2
+s3 = s2 3
 s3 -- emits '6'
 ```
 
