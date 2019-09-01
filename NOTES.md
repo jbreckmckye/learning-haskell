@@ -14,6 +14,16 @@ You can use external shell commands with `:!`, e.g. `:!cls` (clears screen on Wi
 
 Load packages into the REPL with `:l`, e.g. `:l functions.hs`.
 
+### Multi line input
+
+```
+:{
+...
+:}
+```
+
+(Don't forget you can also 'insert' line breaks with semicolons)
+
 ## Concepts
 
 Everything in Haskell can be thought of as an expression or a declaration. Expressions can be literals or operations. Declarations name expressions. Haskell programs are nothing but large expressions comprising smaller ones.

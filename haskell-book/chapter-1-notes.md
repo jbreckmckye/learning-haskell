@@ -67,7 +67,7 @@ The whole abstraction can be applied to a secondary argument to resolve the whol
  -> (3 . 2)
  -> 6
  
-(this helps explain why HS functions work in a partially applied style)
+(this helps explain how HS functions work in a partially applied style)
 
 HANDLING MULTIPLE ARGUMENTS
 
