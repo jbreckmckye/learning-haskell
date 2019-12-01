@@ -43,3 +43,8 @@ foo x =
 duplicateEach :: [Int] -> Int -> [Int]
 duplicateEach inputs multiplier 
     = concat (map (replicate multiplier) inputs)
+    
+-- someIO :: IO () -- IO of a unit (nothing)
+-- someIO = do
+--  things <- readLn -- equivalent to readLn >>= (\ things -> ...rest-of-fn... )
+--  show things
